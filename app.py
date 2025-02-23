@@ -89,7 +89,7 @@ if uploaded_files:
         st.write(f"**File Size:** {format_file_size(file_size)}")
 
         # Data Preview
-        with st.expander("🔍 Quick Preview of the Data", expanded=False):
+        with st.expander("🔎 Quick Preview of the Data", expanded=False):
             st.dataframe(df.head())
 
         # Data Cleaning Options
@@ -129,7 +129,7 @@ if uploaded_files:
             st.dataframe(st.session_state[file_key].head())
 
         # Choose Specific Columns to Keep or Convert
-        st.subheader("🎯 Customize Columns")
+        st.subheader("📌 Customize Columns")
         selected_columns = st.multiselect(f"Choose Columns for {file.name}", df.columns, default=df.columns)
         st.session_state[file_key] = df[selected_columns]
 
@@ -146,7 +146,7 @@ if uploaded_files:
 
             # Categorical Data: Count Plots 
             if not categorial_cols.empty:
-                st.write("📊 **Categorical Data Distribution**")  
+                st.write("📉 **Categorical Data Distribution**")  
                 for col in categorial_cols.columns[:2]:
                     if df[col].nunique() > 1:
                         fig, ax = plt.subplots()  
