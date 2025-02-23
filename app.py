@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from io import BytesIO
 from collections import deque
+import xlsxwriter
 
 st.set_page_config(page_title="⚡ Smart Data Manager", layout='wide')
 st.title("⚡ Smart Data Manager")
